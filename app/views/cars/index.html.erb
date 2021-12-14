@@ -1,0 +1,14 @@
+<% @cars.find_each do |car| %>
+  <ul>
+    <li>
+      <%= link_to car do %>
+      <%= car.model %>
+      <%= car.year %>
+      <%= car.status %>
+      <%= car.color %>
+      <%= link_to 'Edit', edit_car_path(car.id), class:"btn btn-info" %>
+      <%= link_to 'Destroy', car, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+      <% end%>
+    </li>
+  </ul>
+<% end %>

@@ -1,0 +1,7 @@
+<%= simple_form_for [@warehouse, @car], url: warehouse_cars_path do |f| %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.input :status, collection: ["Free", "Not Free"] %>
+  <%= f.input :color %>
+  <%= f.submit %>
+<% end %>

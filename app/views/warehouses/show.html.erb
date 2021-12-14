@@ -1,0 +1,11 @@
+<h1><%= @warehouse.address %></h1>
+<h3>Capacity</h3>
+<p> <%= @warehouse.capacity %></p>
+<%= link_to 'Add a car', new_warehouse_car_path(@warehouse.id) %>
+
+<% @cars.find_each do |car| %>
+  <%= link_to car do %>
+    <%= car.model %>
+    <%= link_to 'Destroy', car, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end  %>

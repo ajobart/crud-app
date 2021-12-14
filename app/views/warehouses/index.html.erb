@@ -1,0 +1,13 @@
+<% @warehouses.find_each do |warehouse| %>
+  <ul>
+    <li>
+      <%= link_to warehouse do %>
+      <%= warehouse.address %>
+      <%= warehouse.capacity %>
+      <%= link_to 'Edit', edit_warehouse_path(warehouse.id), class:"btn btn-info" %>
+      <%= link_to 'Destroy', warehouse, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %>
+      <% end%>
+    </li>
+  </ul>
+<% end %>
+<%= link_to 'Create a warehouse', new_warehouse_path %>
